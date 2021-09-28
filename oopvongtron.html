@@ -7,17 +7,17 @@
 <body>
 <canvas id="cv" style="border:1px solid " width="500" height="500"></canvas>
 <script>
-    class myCircle {
+    class MyCircle {
         x;
         y;
         radius;
         color;
 
-        constructor(x,y,radius,color) {
+        constructor(x,y,radius) {
             this.x = x;
             this.y = y;
             this.radius = radius;
-            this.color = color;
+
 
         }
         getradius(){
@@ -29,15 +29,37 @@
         getArea(){
             return this.radius = Math.PI * radius * radius
         }
-
-        draw(ctx){
-            ctx.beginPath();
-
+        setRandomHex() {
+            return Math.floor(Math.random() * 225)
         }
 
 
+        setRandomColor() {
+            let red = this.setRandomHex()
+            let green = this.setRandomHex()
+            let blue = this.setRandomHex()
+            return "rgb(" + red + "," + blue + "," + green + ")"
+
+        }
+
+        draw(ctx){
+            ctx.beginPath();
+            ctx.arc(this.x,this.y,this.radius,0,2 * Math.PI)
+            ctx.fillStyle = this.setRandomColor()
+            ctx.fill()
+            ctx.closePath()
+        }
     }
-    let Circle = new myCircle(2);
+    let ctx = document.getElementById('cv').getContext('2d')
+    let Circle = new MyCircle(100,100,10,'blue');
+    Circle.draw(ctx);
+    for (let i = 0; i < 10; i++) {
+        let x = Math.random()*500;
+        let y = Math.random()*500;
+        let Circle = new MyCircle(x,y,10,'blue');
+        Circle.draw(ctx);
+    }
+
     // let radius = Circle.getRadius();
     // let area  = Circle.getArea();
     // console.log(radius)
