@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Mobile {
+    id;
+    name;
+    message;
+
+    constructor(id, name, message) {
+      this.id = id;
+      this.name = name;
+      this.message = message;
+    }
+
+    getMessage() {
+      return this.message;
+    }
+
+    sendMessage(message, mobile) {
+      mobile.message = message;
+    }
+  }
+
+  let iphone = new Mobile("1", "iphone");
+  let nokia = new Mobile("2", "nokia");
+  iphone.sendMessage("abc",nokia);
+  let message = nokia.getMessage();
+  console.log(message);
+</script>
+</body>
+</html>

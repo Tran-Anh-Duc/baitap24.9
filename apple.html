@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Apple {
+        weight;
+
+
+        constructor(weight) {
+            this.weigth = weight;
+        }
+
+        getWeight() {
+            return this.weigth
+        }
+
+        setWeight(weight) {
+            this.weigth = weight;
+        }
+
+        decrease() {
+            this.weight -= 1
+        }
+
+        isEmpty() {
+            if (this.weight === 0) {
+                return false
+            } else {
+                return true
+            }
+        }
+
+    }
+
+    class Human {
+        name;
+        gender;
+        weight;
+
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setName(name) {
+            return this.name = name;
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        setWeight(weight) {
+            return this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender === "Male") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getGender() {
+            return this.gender
+        }
+
+        say(string) {
+            console.log(string)
+        }
+
+        checkApple(Apple) {
+            return Apple.isEmpty()
+        }
+
+        eat(Apple) {
+            if (Apple.getWeight() === 0) {
+                console.log("hết táo")
+            } else {
+                Apple.decrease()
+                this.weight += 1
+            }
+
+        }
+    }
+
+    let apple = new Apple(0);
+    let human = new Human("nhu anh", "male", 50)
+    // console.log(human.getName())
+    // console.log(human.getGender())
+    // console.log(human.getWeight())
+    // console.log(human.isMale())
+    // human.setGender("Other")
+    // console.log(human.isMale())
+    // console.log(human.isMale())
+    // console.log(human.getGender())
+    // console.log(human.checkApple(apple))
+    // console.log(apple.getWeight())
+    // console.log(human.getWeight())
+    // human.eat(apple)
+    // console.log(apple.getWeight())
+    // console.log(human.getWeight())
+    // human.say("Ông người này là con lươn chúa!")
+
+    function test() {
+        console.log(apple.getWeight())
+        console.log(human.getWeight())
+        human.eat(apple);
+        console.log(apple.getWeight())
+        console.log(human.getWeight())
+    }
+    test()
+</script>
+</body>
+</html>

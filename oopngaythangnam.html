@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    class myDate{
+        day ;
+        month;
+        year;
+
+        constructor() {
+            this.day = "day";
+            this.month = "month";
+            this.year = "year";
+        }
+
+        setDay(a){
+            alert(a);
+        }
+        setMonth(b){
+            alert(b);
+        }
+        setYear(c){
+            alert(c)
+        }
+
+    }
+    let MyDay = new myDate("day","month","year")
+    console.log(MyDay)
+    MyDay.setDay(26)
+    MyDay.setMonth(9)
+    MyDay.setYear(2021)
+</script>
+</body>
+</html>

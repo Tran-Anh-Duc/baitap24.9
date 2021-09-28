@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>công tắc - bóng đèn</title>
+</head>
+<body>
+
+
+<script>
+  
+  class SwitchButton {
+    lamb ;
+    status;
+
+    constructor(status) {
+      this.status = status;
+    }
+    connectTolamp(elctricLamp){
+      this.lamb = elctricLamp;
+    }
+
+    getSatus(){
+      if (this.status){
+        console.log("công tắc đã bật")
+      }else {
+        console.log("công tắc chưa bật")
+      }
+    }
+
+    switchOn(){
+      if (this.lamb !== undefined){
+        this.lamb.turnOn()
+        this.status = true;
+      }else {
+        console.log("kết nối đã")
+      }
+    }
+    switchOff(){
+      if (this.lamb !== undefined){
+        this.lamb.turnOff()
+        this.status = false;
+      }else {
+        console.log("kết nối đã")
+      }
+    }
+  }
+
+  class ElectricLamp {
+    status;
+
+    constructor() {
+      this.status = status;
+    }
+
+  getStatus(){
+      if (this.status){
+        console.log("bóng đèn đang sáng")
+      }else {
+        console.log("bóng đèn không sáng")
+      }
+  }
+  turnOn(){
+      this.status = true;
+  }
+  turnOff(){
+      this.status = false;
+  }
+
+
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</script>
+
+
+
+
+</body>
+</html>

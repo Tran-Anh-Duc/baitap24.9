@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        heigth;
+        width;
+
+        constructor(a, b) {
+            this.heigth = a;
+            this.width = b;
+        }
+
+        dienTich() {
+            return this.heigth * this.width;
+        }
+
+        chuVi() {
+            return (this.heigth + this.width) * 2
+        }
+
+    }
+
+    let rectangle = new Rectangle(4, 5)
+    console.log(rectangle.dienTich())
+    console.log(rectangle.chuVi())
+
+</script>
+</body>
+</html>

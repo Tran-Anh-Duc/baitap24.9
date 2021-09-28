@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="txt">
+<button onclick="create()">thêm</button>
+<table border="1" id="list"></table>
+<div id="edit-from"></div>
+
+<script>
+
+    let listProduct = ['iphone', 'iphone', 'iphone', 'iphone', 'iphone', 'iphone',]
+
+    function Display() {
+        for (let i = 0; i < listProduct.length; i++) {
+            let str = '<tr><td>Product Name</td><td></td>' + listProduct.length + '</td></tr>'
+            str += `<tr>`;
+            str += `<td>${listProduct[i]}</td>`;
+            str += `<td><button onclick="showEditForm(${i})">Edit</button></td>`
+            str += `<td><button onclick="deleteProduct(${i})">Delete</button></td>`
+            str += `</tr>`
+        }
+        document.getElementById('list').innerHTML = str;
+    }
+    function showEditFrom(index) {
+        let str = `<input id="txtEdit" value="${listProduct[index]}"><button onclick="save(${index}">save</button>`
+        document.getElementById('edit-from').innerHTML = str;
+    }
+    function save(index) {
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
