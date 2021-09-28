@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>điều khiển</title>
+</head>
+<body>
+
+
+<script>
+    class Tv {
+        channel;
+        sound;
+        status;
+
+        constructor(channel, sound) {
+            this.channel = channel;
+            this.sound = sound;
+            this.status = false;
+        }
+
+        getSound() {
+            if (this.status === true) {
+                console.log("TV is at " + this.sound + "volume")
+            } else {
+                console.log("bật tv đã")
+            }
+        }
+
+        channelControl(channel) {
+            if (this.status === true) {
+                this.channel = channel
+                console.log("go to channel" + channel)
+            }
+        }
+        getChannel() {
+            if (this.status === true) {
+                console.log("TV is on channel " + this.channel)
+            } else {
+                console.log("Bật Tv đã bạn êy")
+            }
+        }
+
+        soundControlUp(num) {
+            if (this.status === true) {
+                this.sound += num;
+            } else {
+                console.log("Tivi is off")
+            }
+        }
+
+        soundControlDown(num) {
+            if (this.status === true) {
+                this.sound -= num
+                console.log('sound down' + num)
+            } else {
+                console.log("Ti vi is off")
+            }
+        }
+
+        getStatus() {
+            return this.status
+        }
+
+        setStatus(status) {
+            this.status = status
+        }
+
+    }
+
+    class Remote {
+        code;
+
+        constructor(code) {
+            this.code = code;
+        }
+
+        channelControl(tv, num) {
+            tv.channelControl(num)
+        }
+
+        soundControlUp(tv, num) {
+            return tv.soundControlUp(num)
+        }
+
+        soundControlDown(tv, num) {
+            return tv.soundControlDown(num)
+        }
+
+        controlTv(tv) {
+            if (tv.getStatus()) {
+                tv.setStatus(false)
+            } else {
+                tv.setStatus(true)
+            }
+        }
+
+    }
+
+    let tivi = new Tv(2, 5)
+    let remote = new Remote(2)
+    // tiVi.getSound()
+    // tiVi.getChannel()
+    // remote.controlTv(tiVi)
+    // tiVi.getSound()
+    // tiVi.getChannel()
+    remote.controlTv(tivi)
+    tivi.getSound()
+    tivi.getChannel()
+    remote.channelControl(tivi,3)
+    remote.soundControlUp(tivi,2)
+    tivi.getSound()
+    tivi.getChannel()
+    remote.soundControlDown(tivi,4)
+    tivi.getSound()
+    // remote.controlTv(tivi)
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Mouse {
+        name;
+        weight;
+        speed;
+        status;
+
+        constructor(name,weight,speed,status) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = status;
+        }
+
+        getWigth(){
+            return this.weight;
+        }
+
+        chirpMouse(){
+            return this.name + 'kêu' + string
+        }
+
+    }
+
+    class Cat {
+        name;
+        weight;
+        maxSpeed;
+
+
+        constructor(name,weight,maxSpeed) {
+            this.name = name;
+            this.weight = weight;
+            this.maxSpeed = maxSpeed;
+        }
+
+        chirpCat(string){
+            return this.name + 'kêu' + string
+     }
+      catch(Mouse){
+            if (this.maxSpeed >= Mouse.speed ){
+                console.log(this.name + "đã bắt được"  + Mouse.name )
+                return true;
+            }else {
+                console.log(this.name + 'không bắt được' + Mouse.name)
+                return  false;
+            }
+      }
+      eat(Mouse){
+            if(this.catch(Mouse) && Mouse.status){
+                this.weight += Mouse.getWigth()
+                Mouse.status = false;
+             }else {
+                if (!this.catch(Mouse)){
+                    console.log('chạy chậm quá')
+                }else {
+                    console.log("không thể ăn")
+                }
+            }
+      }
+
+    }
+    let meo = new Cat('tom',10,10)
+    let chuot = new Mouse('jerry',10,15,true)
+    meo.catch(chuot)
+    meo.eat(chuot)
+    console.log(chuot.status)
+    console.log(meo.weight)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

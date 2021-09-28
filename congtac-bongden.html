@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>công tắc - bóng đèn</title>
+  <button onclick="on()">on</button>
+  <button onclick="off()">off</button>
 </head>
 <body>
 
@@ -16,11 +18,11 @@
     constructor(status) {
       this.status = status;
     }
-    connectTolamp(elctricLamp){
-      this.lamb = elctricLamp;
+    connectToLamp(ElctricLamp){
+      this.lamb = ElctricLamp;
     }
 
-    getSatus(){
+    getStatus(){
       if (this.status){
         console.log("công tắc đã bật")
       }else {
@@ -67,12 +69,23 @@
       this.status = false;
   }
 
+  }
+  let switchButton = new SwitchButton(false)
+  let lamp =  new ElectricLamp(false)
+  switchButton.connectToLamp(lamp)
 
+  function on() {
+    switchButton.switchOn()
+    lamp.getStatus();
+    switchButton.getStatus()
+  }
+  function off() {
+    switchButton.switchOff()
+    lamp.getStatus()
+    switchButton.getStatus()
   }
 
-  
-  
-  
+
   
   
   
