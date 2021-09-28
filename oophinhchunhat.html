@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<canvas id="cv" style="border: 1px solid " width="500" height="500"></canvas>
 <body>
 <script>
     class Rectangle {
+        x;
+        y;
         heigth;
         width;
+        color
 
-        constructor(a, b) {
+        constructor(x,y,a, b,color) {
+            this.x =x;
+            this.y=y;
             this.heigth = a;
             this.width = b;
+            this.color = color;
         }
 
         dienTich() {
@@ -22,10 +29,20 @@
         chuVi() {
             return (this.heigth + this.width) * 2
         }
+        draw(ctx){
+            ctx.beginPath()
+            ctx.rect(this.x,this.y,this.heigth,this.width)
+            ctx.fillStyle = this.color
+            ctx.fill()
+            ctx.closePath()
+        }
+
+
 
     }
-
-    let rectangle = new Rectangle(4, 5)
+    let ctx = document.getElementById('cv').getContext('2d')
+    let rectangle = new Rectangle(100, 100,100,50,'blue')
+    rectangle.draw(ctx)
     console.log(rectangle.dienTich())
     console.log(rectangle.chuVi())
 
